@@ -1,4 +1,5 @@
 module.exports.posts=function(req,res){
-    console.log('post contorller...')
-    res.end('<h1> Post Controller </h1>');
+    return res.render('user_profile',{
+        title:'posts',
+    })
 }

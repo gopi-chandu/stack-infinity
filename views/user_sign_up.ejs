@@ -1,0 +1,26 @@
+<div class="heading"><h1>Sign Up</h1></div>
+<link rel="stylesheet" href="/css/sign_up.css" />
+
+<form action="/users/create" method="POST">
+  <div class="box ">
+    <div class="item">
+      <label for="name">Name</label>
+      <input class="width" type="text" name="name" id="name" />
+    </div>
+    <div class="item">
+      <label for="email">Email</label>
+      <input class="width" type="email" name="email" id="email" />
+    </div>
+    <div class="item">
+      <label for="password">password</label>
+      <input class="width" type="password" name="password" id="password" />
+    </div>
+    <div class="item">
+      <label for="confirm-password">password-confirmation </label>
+      <input class="width" type="password" name="confirm_password" id="confirm-password" />
+    </div>
+    <div class="item2">
+      <input type="submit" value="Sign Up" class="size" />
+    </div>
+  </div>
+</form>
