@@ -1,12 +1,21 @@
 @font-face {
-    font-family: "JetBrainsMono-Regular";
-    /* src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); */
+  font-family: "poppins";
+  /* src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); */
+  src: url("../fonts/Poppins-Regular.ttf"); }
 
-    src:url("../fonts/Poppins-Regular.ttf")
-  }
-  
+h1 {
+  margin: 0px; }
+
+p {
+  margin: 0px; }
+
 body {
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
   text-align: center;
-  font-family: 'JetBrainsMono-Regular';
-}
+  font-family: 'poppins'; }
+  body #main-layout {
+    margin: 0px;
+    padding: 0px;
+    height: 400px;
+    background-color: aqua; }

@@ -1,0 +1,16 @@
+footer-container {
+  background-color: burlywood;
+  display: flex; }
+  footer-container ul {
+    margin: 0;
+    background-color: burlywood;
+    list-style: none;
+    justify-content: space-between; }
+    footer-container ul li {
+      font-size: 12px;
+      list-style: none;
+      margin: 2px; }
+
+.bottom {
+  font-size: 12px;
+  margin: 10px; }

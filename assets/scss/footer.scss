@@ -1,0 +1,23 @@
+$font-footer-size :12px;
+footer-container {
+    background-color: burlywood;
+    display: flex;    
+
+    ul {
+      margin: 0;
+      background-color: burlywood;
+      list-style: none;
+      //display: flex;
+      justify-content: space-between;
+      li {
+        font-size: $font-footer-size;
+        list-style: none;
+        margin: 2px;
+      }
+    }
+
+  }
+  .bottom{
+    font-size: $font-footer-size;
+    margin: 10px;
+  }

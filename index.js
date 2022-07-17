@@ -12,6 +12,17 @@ const passportLocal = require("./config/passport-local-strategy");
 // for storing cookie session persistently in database
 const MongoStore = require("connect-mongo");
 
+//for scss
+const sassMiddleware = require('node-sass-middleware')
+
+app.use(sassMiddleware({
+  src: './assets/scss',
+  dest: './assets/css',
+  debug: true,
+  outputStyle:'extended',
+  prefix:'/css' // in templates we have used the "/css" as the prefix so we use it here
+}))
+
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static("./assets"));
