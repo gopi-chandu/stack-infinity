@@ -6,12 +6,20 @@ module.exports.profile = function (req, res) {
 };
 //render sign in page
 module.exports.signIn = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
+
   return res.render("user_sign_in", {
     title: "Sign In",
   });
 };
 // render sign up page
 module.exports.signUp = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
+
   return res.render("user_sign_up", {
     title: "Sign Up",
   });
@@ -45,5 +53,28 @@ module.exports.create = function (req, res) {
 
 // sign in and create a session
 module.exports.createSession = function (req, res) {
-  //TODO later
+  console.log("locals---", res.locals);
+  return res.redirect("/");
+};
+
+module.exports.destroySession = function (req, res) {
+  // this is given by passport
+  // req.logout(function (err) {
+  //   if (err) {
+  //     console.log(err);
+  //     console.log("error =====================");
+  //     return res.redirect("back");
+  //   }
+  // });
+  //req.session.destroy();
+  // req.logout();
+  req.logout(function (err) {
+    if (err) {
+      console.log(err);
+      console.log("error =====================");
+      return res.redirect("back");
+    }
+  });
+  
+  return res.redirect("/");
 };
