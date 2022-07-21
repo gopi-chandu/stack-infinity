@@ -1,0 +1,41 @@
+#home-page-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: red; }
+  #home-page-container #user-feed {
+    padding: 10px;
+    width: 70%;
+    background-color: gold; }
+  #home-page-container #user-friends {
+    padding: 10px;
+    width: 30%;
+    border-left: 2px solid black; }
+
+.post-post {
+  border-style: none;
+  width: 99%;
+  height: 100%; }
+
+.outer {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.post-type {
+  background-color: aliceblue;
+  text-align: justify; }
+
+textarea {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none; }
+
+textarea:focus, input:focus {
+  outline: 0; }
+
+*:focus {
+  outline: 0; }

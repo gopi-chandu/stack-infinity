@@ -4,7 +4,8 @@ const app = express();
 const port = 8000;
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
-
+const flash = require("connect-flash");
+const custom_flash_middleware = require("./config/custom-flash-middleware");
 // for the session cookie
 const session = require("express-session");
 const passport = require("passport");
@@ -13,15 +14,17 @@ const passportLocal = require("./config/passport-local-strategy");
 const MongoStore = require("connect-mongo");
 
 //for scss
-const sassMiddleware = require('node-sass-middleware')
+const sassMiddleware = require("node-sass-middleware");
 
-app.use(sassMiddleware({
-  src: './assets/scss',
-  dest: './assets/css',
-  debug: true,
-  outputStyle:'extended',
-  prefix:'/css' // in templates we have used the "/css" as the prefix so we use it here
-}))
+app.use(
+  sassMiddleware({
+    src: "./assets/scss",
+    dest: "./assets/css",
+    debug: true,
+    outputStyle: "extended",
+    prefix: "/css", // in templates we have used the "/css" as the prefix so we use it here
+  })
+);
 
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -64,11 +67,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
-app.use((req,res,next)=>{
-  console.log(req.session)
-  console.log(req.user)
+app.use((req, res, next) => {
+  // console.log(req.session)
+  // console.log(req.user)
   next();
-})
+});
+
+app.use(flash());
+app.use(custom_flash_middleware.setFlash);
 // use express router
 app.use("/", require("./routes"));
 

@@ -1,2 +1,38 @@
+<link rel="stylesheet" href="/css/home.css">
+<div id="home-page-container">
+  <section id="user-feed">
+    <p>Posts</p>
+    <% if(locals.user){%>
+    <form action="/posts/create" id="new-post-form" method="post">
+      <div class="outer">
+        <div class="post-type">
+          <textarea name="content" cols="30" rows="3" placeholder="Type here..." required class="post-post"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="post" />
+        </div>
+      </div>
+      
+      
+    </form>
+    <% }%>
+    <div id="post-list-container">
+      <ul>
+          <% for(post of posts) { %>
+              <%- include('_post') -%>
+          <%}%>
+      </ul>
+    </div>
+  </section>
+  
+  <section id="user-friends">
+    <h4>Friends</h4>
+    <% for(u of all_users) {%>
+      <p>
+        <a href='/users/profile/<%=u.id%>'><%=u.name%></a>
+      </p>
+    <%}%>
+  </section>
+</div>
+<script src="/js/user-posts.js"></script>
 
-    <h1>Stack Infinity / <%= title%></h1>

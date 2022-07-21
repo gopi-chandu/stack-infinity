@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/comment.css">
+<div id="comment-container-<%-comment._id%>" class="post-comment-box">
+    <li>
+        <p class="comment">
+          <div class="comment-top">
+
+            <div class="user-name">
+              <%= comment.user.name%>
+            </div>
+            
+            <div class="delete-box">
+              <% if((locals.user && locals.user.id==comment.user.id) || (locals.user && locals.user.id==post.user.id) ){%>
+                <div class="delete-button">
+                  <a class="delete-comment-button-jq" href="/comments/destroy/<%=comment._id%>">x</a>
+                </div>
+                <% }%>
+            </div>
+
+          </div>
+            <div class="comment-content">
+              <%= comment.content%>
+            </div>
+          </p>
+    </li>
+</div>

@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/css/post.css">
+
+
+  <li id="post-<%post._id%>">
+    <div class="post-container">
+    <div class="post-content">
+      <div class="top-post-box">
+        <div>
+          <div class="user-box">
+            <div class="user-highlight">
+              <%=post.user.name%>
+            </div>
+            <br>
+            <small><%=moment(post.createdAt).format('DD MMM YYYY')%></small>
+          </div>
+        </div>
+        <% if(locals.user && locals.user.id==post.user.id){%>
+        <div class="delete-box">
+          
+            <div class="delete-button">
+              <a class="delete-button-jq" href="/posts/destroy/<%=post.id%>">x</a>
+            </div>
+          
+        </div>
+        <% }%>
+      </div>
+      <!-- top post box ended -->
+      <div class="post-content-body">
+        <p>
+          <%=post.content%>
+        </p>
+      </div>
+        
+    </div>
+    <div class="comment-heading">
+      <p>Comments</p>
+    </div>
+    <!-- post comments div -->
+    <div class="post-comments">
+      <% if(locals.user){%>
+        <div class="comment-form">
+          <form action="/comments/create"  method="post" id="new-comment-form">
+            <div class='comment-text'>
+              <!-- <input type="textarea"  rows="5"   > -->
+
+              <textarea id="txtArea" rows="10" cols="70" name="content" placeholder="type something to comment ..." required class="comment-text-content"></textarea>
+            </div>
+            
+            <input type="hidden" name="post"  value=<%= post._id %> >
+            <div class='comment-button-container'>
+              <input type="submit" value="Add" class='comment-button'>
+            </div>
+            
+          </form>
+        </div>
+        
+      <% }%>
+      
+      <div id="comment-list-container" class="post-comments-list">
+          <ul id="post-comments-<%=post._id%>" class="list">
+            <%for(comment of post.comments){%>
+                <%-include('_comment')-%>
+            <%}%>
+          </ul>
+      </div>
+    </div>
+  </div>
+</li>

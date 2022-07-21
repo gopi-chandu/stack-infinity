@@ -1,3 +1,22 @@
 body{
     background-color: lightblue;
 }
+.item{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    height: 30px;
+}
+.box{
+    padding: 10px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+input{
+    width: 200px;
+}

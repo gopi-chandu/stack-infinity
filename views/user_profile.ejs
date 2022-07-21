@@ -1,3 +1,38 @@
 
     <link rel="stylesheet" href="/css/user_profile.css">
     <h1>Stack Infinity / <%= title%></h1>
+
+    
+
+    <% if(profile_user.id==user.id){%>
+        <!-- if user matches then show the form -->
+        <form action="/users/update/<%=profile_user.id%>" method="post">
+            <div class="box">
+                <div class="item">
+                    <label for="name">Name : </label>
+                <input id="name" type="text" name="name" value="<%=profile_user.name%>" placeholder="Your name" required>
+                </div>
+                <div class="item">
+                    <label for="emial">Email : </label>
+                <input id="email" type="email" name="email" value="<%=profile_user.email%>" placeholder="Your name" required> 
+                </div>
+                
+            </div>
+            <input type="submit" value="update">
+        </form>
+    <% }else{%>
+        <!-- just show the profile  -->
+        <div class="box">
+            <div class="item">
+                <label for="name">Name : </label>
+                <p id="name"> <%= profile_user.name%></p>
+            </div>
+            <div class="item">
+                <label for="email">Email : </label>
+                <p id="email"><%= profile_user.email%></p>
+            </div>
+            
+        </div>
+        
+        
+    <% }%>
