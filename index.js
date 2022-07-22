@@ -9,6 +9,7 @@ const custom_flash_middleware = require("./config/custom-flash-middleware");
 // for the session cookie
 const session = require("express-session");
 const passport = require("passport");
+const passportJWT = require("./config/passport-jwt-strategy");
 const passportLocal = require("./config/passport-local-strategy");
 // for storing cookie session persistently in database
 const MongoStore = require("connect-mongo");
