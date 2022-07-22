@@ -1,4 +1,7 @@
 const User = require("../models/user");
+const fs = require("fs");
+const path = require("path");
+
 module.exports.profile = async function (req, res) {
   try {
     let user = await User.findById(req.params.id);
@@ -10,6 +13,7 @@ module.exports.profile = async function (req, res) {
     console.log(`Error ${err}`);
   }
 
+  //call back function def
   // User.findById(req.params.id, function (err, user) {
   //   if (err) {
   //     console.log("error in signing up...");
@@ -22,6 +26,7 @@ module.exports.profile = async function (req, res) {
   //   });
   // });
 };
+
 //render sign in page
 module.exports.signIn = function (req, res) {
   if (req.isAuthenticated()) {
@@ -94,24 +99,73 @@ module.exports.destroySession = function (req, res) {
     console.log(err);
     console.log("error =====================");
   }
-  
 
   // req.logout(function (err) {
   //   if (err) {
   //     console.log(err);
   //     console.log("error =====================");
   //     // return res.redirect("back");
-      
+
   //   }
   // });
-  
 };
 
-module.exports.update = async function (req, res) {
+module.exports.update2 = async function (req, res) {
   console.log("req body ===================", req.body);
   if (req.user.id == req.params.id) {
     try {
       let user = await User.findByIdAndUpdate(req.params.id, req.body);
+      return res.redirect("back");
+    } catch (err) {
+      console.log(`Error ${err}`);
+      // return res.redirect("back");
+    }
+  } else {
+    return res.status(401).send("unauthorized");
+  }
+};
+
+module.exports.update = async function (req, res) {
+  if (req.user.id == req.params.id) {
+    try {
+      let user = await User.findById(req.params.id);
+      User.uploadedAvatar(req, res, function (err) {
+        if (err) console.log("***** Multer error ", err);
+
+        user.name = req.body.name;
+        user.email = req.body.email;
+        console.log(req.body);
+        if (req.file) {
+          console.log(req.file);
+
+          if (user.avatar) {
+            if (fs.existsSync(path.join(__dirname, "..", user.avatar))) {
+              fs.unlinkSync(path.join(__dirname, "..", user.avatar));
+            }
+          }
+          user.avatar = User.avatarPath + "/" + req.file.filename;
+        }
+        user.save();
+        return res.redirect("back");
+      });
+    } catch (err) {
+      console.log(`Error ${err}`);
+      // return res.redirect("back");
+    }
+  } else {
+    return res.status(401).send("unauthorized");
+  }
+};
+
+module.exports.updateProfile = async function (req, res) {
+  if (req.user.id == req.params.id) {
+    try {
+      let user = await User.findById(req.params.id);
+      User.uploadedAvatar(req, res, function (err) {
+        if (err) console.log("error ->", err);
+
+        console.log(req.file);
+      });
       return res.redirect("back");
     } catch (err) {
       console.log(`Error ${err}`);

@@ -1,26 +1,26 @@
 
     <link rel="stylesheet" href="/css/user_profile.css">
-    <h1>Stack Infinity / <%= title%></h1>
+    <p><%= title%></p>
 
-    
+    <img src="<%=profile_user.avatar%>" alt="<%=profile_user.name%>" width="100">
 
     <% if(profile_user.id==user.id){%>
-        <form action="/users/update-profile/<%=profile_user.id%>" method="post" enctype="multipart/form-data">
-            <div class="box">
-                <div class="item">
-                    <label for="name">NProfile : </label>
-                    <input id="avatar" type="file" name="avatar" value="" placeholder="" required>
-                </div>
-            </div>
-            <input type="submit" value="update avatar">
-        </form>
         <!-- if user matches then show the form -->
-        <form action="/users/update/<%=profile_user.id%>" method="post">
+        <form action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data" method="POST" >
             <div class="box">
+                
+                
+
+                <div >
+                    <input type="file" name="avatar" placeholder="Profile Picture" accept="image/png, image/gif, image/jpeg" onchange="readURL(this);" >
+                <img id="blah" src="http://placehold.it/180" alt="your image" width="100"/>
+                </div>
+
                 <div class="item">
                     <label for="name">Name : </label>
                 <input id="name" type="text" name="name" value="<%=profile_user.name%>" placeholder="Your name" required>
                 </div>
+
                 <div class="item">
                     <label for="emial">Email : </label>
                 <input id="email" type="email" name="email" value="<%=profile_user.email%>" placeholder="Your name" required> 
@@ -45,3 +45,18 @@
         
         
     <% }%>
+    <script>
+            function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    
