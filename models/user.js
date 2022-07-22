@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 const multer = require("multer");
 const path = require("path");
 const AVATAR_PATH = path.join("/uploads/users/avatars");
@@ -37,6 +40,13 @@ let storage = multer.diskStorage({
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     cb(null, file.fieldname + "-" + uniqueSuffix);
   },
+});
+
+userSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 12);  //converting to hash password
+  }
+  next();
 });
 
 userSchema.statics.uploadedAvatar = multer({ storage: storage }).single(
