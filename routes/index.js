@@ -10,5 +10,8 @@ router.get("/",passport.checkAuthentication, homeController.home);
 router.use("/users", require("./users"));
 router.use("/posts", require("./posts"));
 router.use("/comments", require("./comments"));
+
+router.use('/api',require('./api'))
+
 //for any further routes from here , we use router.use()
 module.exports = router;

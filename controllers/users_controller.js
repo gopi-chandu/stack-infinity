@@ -110,20 +110,7 @@ module.exports.destroySession = function (req, res) {
   // });
 };
 
-module.exports.update2 = async function (req, res) {
-  console.log("req body ===================", req.body);
-  if (req.user.id == req.params.id) {
-    try {
-      let user = await User.findByIdAndUpdate(req.params.id, req.body);
-      return res.redirect("back");
-    } catch (err) {
-      console.log(`Error ${err}`);
-      // return res.redirect("back");
-    }
-  } else {
-    return res.status(401).send("unauthorized");
-  }
-};
+
 
 module.exports.update = async function (req, res) {
   if (req.user.id == req.params.id) {
@@ -157,21 +144,3 @@ module.exports.update = async function (req, res) {
   }
 };
 
-module.exports.updateProfile = async function (req, res) {
-  if (req.user.id == req.params.id) {
-    try {
-      let user = await User.findById(req.params.id);
-      User.uploadedAvatar(req, res, function (err) {
-        if (err) console.log("error ->", err);
-
-        console.log(req.file);
-      });
-      return res.redirect("back");
-    } catch (err) {
-      console.log(`Error ${err}`);
-      // return res.redirect("back");
-    }
-  } else {
-    return res.status(401).send("unauthorized");
-  }
-};

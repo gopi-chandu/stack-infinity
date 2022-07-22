@@ -14,7 +14,8 @@ module.exports.home = async function (req, res) {
           path: "user",
         },
       })
-      .sort({ updatedAt: -1 });
+      .sort('-createdAt');
+      // .sort({ updatedAt: -1 });
 
     let users = await User.find({});
 
