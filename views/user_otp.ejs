@@ -1,0 +1,18 @@
+<div class="heading"><p><%=title%></p></div>
+<link rel="stylesheet" href="/css/sign_up.css" />
+
+<form action="/users/verifyOTP" method="POST">
+  <div class="box ">
+
+    <div class="item">
+      <input class="width"  name="userId" id="passwd" value=<%=userID%> hidden/>
+      <label for="passwd">OTP</label>
+      
+      <input class="width" type="password" name="otp" id="passwd" />
+    </div>
+    </div>
+    <div class="item2">
+      <input type="submit" value="submit" class="size" />
+    </div>
+  </div>
+</form>

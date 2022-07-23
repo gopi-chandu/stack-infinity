@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 const multer = require("multer");
@@ -25,12 +25,15 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
     },
+    verified: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
   }
 );
-
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -44,7 +47,7 @@ let storage = multer.diskStorage({
 
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
-    this.password = await bcrypt.hash(this.password, 12);  //converting to hash password
+    this.password = await bcrypt.hash(this.password, 12); //converting to hash password
   }
   next();
 });

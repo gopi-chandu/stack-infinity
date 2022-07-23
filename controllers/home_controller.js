@@ -4,7 +4,9 @@ const User = require("../models/user");
 // date formatting package
 const moment = require("moment");
 module.exports.home = async function (req, res) {
+  
   try {
+    
     let posts = await Post.find({})
       .populate("user")
       .populate({
@@ -14,11 +16,12 @@ module.exports.home = async function (req, res) {
           path: "user",
         },
       })
-      .sort('-createdAt');
-      // .sort({ updatedAt: -1 });
+      .sort("-createdAt");
+    // .sort({ updatedAt: -1 });
 
     let users = await User.find({});
-
+    // console.log("1111111111111111111111111",posts[0]);
+    // return res.send("<h1>heyyy</h1>");
     return res.render("home", {
       title: "Stack Infinity | Home",
       posts: posts,
@@ -30,5 +33,3 @@ module.exports.home = async function (req, res) {
     return;
   }
 };
-
-

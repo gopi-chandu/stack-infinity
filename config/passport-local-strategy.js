@@ -35,7 +35,12 @@ passport.use(
             message: "Incorrect username or password.",
           });
         }
-
+        if(!(user.verified)){
+          req.flash("error", "verify email");
+          return done(null, false, {
+            message: "verify email ",
+          });
+        }
         return done(null, user);
       });
     }
@@ -72,8 +77,8 @@ passport.checkAuthentication = function (req, res, next) {
   return res.redirect("/users/sign-in");
 };
 
-passport.setAuthenticatedUser = function (req, res, next) {
-  if (req.isAuthenticated()) {
+passport.setAuthenticatedUser = async function (req, res, next) {
+  if (await req.isAuthenticated()) {
     // req.user contains the current signed in user from the session cookie and we need to send this to locals for the views
     res.locals.user = req.user;
     console.log("user is set");

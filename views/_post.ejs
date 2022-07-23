@@ -59,7 +59,7 @@
       <div id="comment-list-container" class="post-comments-list">
           <ul id="post-comments-<%=post._id%>" class="list">
             <%for(comment of post.comments){%>
-                <%-include('_comment')-%>
+                <%- include('_comment') %>
             <%}%>
           </ul>
       </div>
