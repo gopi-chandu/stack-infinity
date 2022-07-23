@@ -1,6 +1,8 @@
 const Comment = require("../models/comment");
 const Post = require("../models/post");
 
+const commentsMailer = require("../mailers/comments_mailer");
+
 module.exports.create = async function (req, res) {
   try {
     // here post is the name of the post_id coming from form
@@ -15,8 +17,10 @@ module.exports.create = async function (req, res) {
     await post.comments.push(comment); //pushing comment_id
     await post.save();
 
-    let comments = await Comment.findById(comment._id).populate("user");
-    console.log('post ---- ',comment)
+    let comments = await Comment.findById(comment._id).populate("user",'name email');
+
+    commentsMailer.newComment(comments);
+    console.log("post ---- ", comments);
     if (req.xhr) {
       return res.status(200).json({
         data: {
