@@ -11,7 +11,10 @@ const commentEmailWorker = require("../workers/comment_email_workers");
 module.exports.create = async function (req, res) {
   try {
     // here post is the name of the post_id coming from form
-    let post = await Post.findById(req.body.post);
+    let post = await Post.findById(req.body.post).populate(
+      "user",
+      "name email"
+    );
     let comment = await Comment.create({
       content: req.body.content,
       post: req.body.post, // here post is the id of the post
@@ -21,21 +24,28 @@ module.exports.create = async function (req, res) {
     // here push method puts the id of the comment
     await post.comments.push(comment); //pushing comment_id
     await post.save();
+    let job1 = queue.create("post-comment-emails", post).save(function (err) {
+      if (err) {
+        console.log("error in creating a queue", err);
+        return;
+      }
 
+      console.log("job id -> -> ", job1.id);
+    });
     let comments = await Comment.findById(comment._id).populate(
       "user",
       "name email"
     );
 
     //commentsMailer.newComment(comments);
-    let job = queue.create("emails", comments).save(function (err) {
-      if (err) {
-        console.log("error in creating a queue", err);
-        return;
-      }
+    // let job = queue.create("emails", comments).save(function (err) {
+    //   if (err) {
+    //     console.log("error in creating a queue", err);
+    //     return;
+    //   }
 
-      console.log('job id -> -> ',job.id);
-    });
+    //   console.log('job id -> -> ',job.id);
+    // });
 
     console.log("post ---- ", comments);
     if (req.xhr) {
