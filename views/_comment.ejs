@@ -21,5 +21,15 @@
               <%= comment.content%>
             </div>
           </p>
+          <div>
+            <!-- like box -->
+            <%if (locals.user){ %>
+              <a class="toggle-like-button" data-likes="<%= comment.likes.length%>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                <%= comment.likes.length%> &hearts;
+              </a>
+              <%} else{ %>
+                <%= comment.likes.length%> &hearts;
+            <%}%>
+          </div>
     </li>
 </div>

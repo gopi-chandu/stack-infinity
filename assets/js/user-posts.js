@@ -16,6 +16,11 @@
           let newPost = createPostDOM(data.data.post, date);
           $("#post-list-container>ul").prepend(newPost);
           deletePost($(" .delete-button-jq", newPost));
+
+          new PostComments()
+
+
+
           new Noty({
             type: "success",
             theme: "relax",
@@ -64,6 +69,11 @@
           </p>
         </div>
           
+      </div>
+      <div>
+      <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
+          0 &hearts;
+        </a>
       </div>
       <div class="comment-heading">
         <p>Comments</p>
@@ -152,6 +162,11 @@
               ${comment.content}
             </div>
           </p>
+          <div>
+          <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment">
+                0 &hearts;
+              </a>
+          </div>
     </li>
 </div>`);
   };
@@ -204,7 +219,13 @@
       })
     })
   }
+
+
+
+
   createPost();
 
   createComment();
+
+
 }

@@ -32,6 +32,16 @@
       </div>
         
     </div>
+    <div>
+      <!-- like box -->
+      <%if (locals.user){ %>
+        <a class="toggle-like-button" data-likes="<%= post.likes.length%>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+          <%= post.likes.length%> &hearts;
+        </a>
+        <% } else{ %>
+          <%= post.likes.length%> &hearts;
+      <%}%>
+    </div>
     <div class="comment-heading">
       <p>Comments</p>
     </div>
