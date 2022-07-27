@@ -18,4 +18,4 @@ const production = {
   jwtKey: process.env.secret,
 };
 
-module.exports =developemnt;
+module.exports =production;
