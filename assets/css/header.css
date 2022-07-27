@@ -2,7 +2,9 @@ header {
   margin: 0px;
   background-color: #B2A4FF;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; }
   header left {
     margin-top: 5px;
     margin-left: 10px;
@@ -16,7 +18,6 @@ header {
       margin-left: 7px; }
   header ul {
     margin: 0;
-    background-color: #B2A4FF;
     list-style: none;
     display: flex;
     justify-content: space-between; }
@@ -30,7 +31,7 @@ header {
         margin-left: 3px; }
       header ul li div {
         padding: 5px;
-        background-color: #f9bb3f;
+        background-color: #a6a6a6;
         border-radius: 7%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
       header ul li a {
@@ -38,4 +39,4 @@ header {
       header ul li a:hover {
         text-decoration: none; }
         header ul li a:hover div {
-          background-color: #faaa14; }
+          background-color: white; }

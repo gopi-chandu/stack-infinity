@@ -13,9 +13,17 @@ const UserOTPVerification = require("../models/userOTPVerification");
 module.exports.profile = async function (req, res) {
   try {
     let user = await User.findById(req.params.id);
+    // let friend1=Friendship.findById({from_user:user._id});
+    // let friend2=Friendship.findById({to_user:user._id});
+    // let friendship=false;
+    // if(friend1 || friend2){
+    //   friendship=true;
+    // } 
+
     return res.render("user_profile", {
       title: "User Profile",
       profile_user: user,
+      // friend: friendship,
     });
   } catch (err) {
     console.log(`Error ${err}`);
@@ -139,7 +147,7 @@ module.exports.verifyOTP = async function (req, res) {
       const UserOTPVerificationRecord = await UserOTPVerification.find({
         userId,
       }).sort({ createdAt: -1 });
-      
+
       if (UserOTPVerificationRecord.length <= 0) {
         // no record
         // throw error

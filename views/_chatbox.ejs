@@ -1,0 +1,29 @@
+<% if (locals.user){ %>
+	
+
+	<div id="chat-box">
+		<div id="heading">
+			<p>Group chat of All users</p>
+		</div>
+		<ul id="chat-messages">
+			<li class="friend">
+				<p>Other Message</p>
+			</li>
+			<li class="our">
+				<p>
+					Self Message
+                </p>
+				
+			</li>
+
+		</ul>
+		<div id="message-input">
+			<input id="chat-message-input" placeholder="Type message here">
+			<button id="send-message">Send</button>
+		</div>
+
+	</div>
+<% } %>
+<script>
+	$("#chat-messages").animate({ scrollTop: $('#chat-messages').prop("scrollHeight")*100000000000000}, 1000);
+</script>

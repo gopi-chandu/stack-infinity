@@ -1,13 +1,24 @@
 <header>
   <left>
+    <a href="/" style="display: inline; text-decoration:none">
     <div>
-      <img src="/images/logo.png" alt="Logo">
+      <img src="/images/doge.png" alt="Logo">
     </div>
+  </a>
+  <a href="/" style="display: inline; text-decoration:none">
     <h1>Stack Infinity</h1>
+  </a>
+    
+  
   </left>
 
   <ul>
     <% if(locals.user){%>
+      <%if(locals.user.avatar){%>
+        <img class='img' id="blah" src="<%= locals.user.avatar%>" alt="your image" width="30" height="30"/>
+      <%}else{%>
+        <img class='img' id="blah" src="/images/doge.png" alt="your image" width="30" height="30"/>
+      <%}%>
     <li><p><%=user.name%></p></li>
     <li><a href="/users/sign-out"><div>Sign Out</div></a></li>
     <%}else{%>

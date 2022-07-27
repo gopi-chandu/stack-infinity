@@ -2,13 +2,28 @@
 
 
   <li id="post-<%post._id%>">
-    <div class="post-container">
-    <div class="post-content">
+    <!-- card -->
+    <div class="post-container ">
+
+
+    <div class="post-content ">
       <div class="top-post-box">
         <div>
-          <div class="user-box">
-            <div class="user-highlight">
-              <%=post.user.name%>
+          <div class="user-box ">
+            <div class="user-highlight ">
+              <div style="display: inline; padding-bottom: 0px;">
+                <%if(post.user.avatar){%>
+                  <img class='img' id="blah" src="<%= post.user.avatar%>" alt="your image" width="30"/>
+                <%}else{%>
+                  <img class='img' id="blah" src="/images/doge.png" alt="your image" width="30"/>
+                <%}%>
+                
+              </div>
+              <div style="display: inline;margin-bottom:  4px;">
+                <%=post.user.name%>
+              </div>
+              
+              
             </div>
             <br>
             <small><%=moment(post.createdAt).format('DD MMM YYYY')%></small>

@@ -5,6 +5,10 @@ header {
   background-color: $header-bg-color;
   display: flex;
   justify-content: space-between;
+  // border-radius: 20px;
+background: #e0e0e0;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
   
   // position: fixed;
   // width: 100%;
@@ -15,6 +19,7 @@ header {
     display: flex;
     img{
       height: 35px;
+  
     }
     h1{
       font-size: x-large;
@@ -24,7 +29,7 @@ header {
   }
   ul {
     margin: 0;
-    background-color: $header-bg-color;
+    // background-color: $header-bg-color;
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -39,7 +44,7 @@ header {
       }
       div{
         padding: 5px;
-        background-color: rgb(249, 187, 63);
+        background-color: rgb(166, 166, 166) ;
         border-radius: 7%;
         // box-shadow: 2px 1px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -50,7 +55,8 @@ header {
       a:hover{
         text-decoration: none;
         div{
-          background-color: rgb(250, 170, 20) ;
+          background-color: rgb(255, 255, 255);
+          
         }
       }
     }

@@ -1,47 +1,49 @@
-.post-comment-box{
-    // border: 1px solid black;
-    // border-bottom: 1px solid rgb(118, 118, 118);
-    // background-color: aqua;
-    // border-radius: 6px;
-    padding-left: 5px;
+.post-comment-box {
+  // border: 1px solid black;
+  // border-bottom: 1px solid rgb(118, 118, 118);
+  // background-color: aqua;
+  // border-radius: 6px;
+  padding-left: 5px;
 }
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-.comment{
-    border-bottom: 1px solid rgb(118, 118, 118);
+.comment {
+  border-bottom: 1px solid rgb(118, 118, 118);
 }
-.comment-top{
-    display: flex;
-    font-size: 12px;
-    justify-content: space-between;
+.comment-top {
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
 }
-.comment-content{
-    font-size: smaller;
-    margin-left: 4px;
+.comment-content {
+  font-size: smaller;
+  margin-left: 4px;
 }
-.user-name{
-    background-color: rgb(168, 168, 168);
-    border-radius: 2px;
-    padding: 2px;
-    margin: 2px;
+.user-name {
+  padding: 2px;
+  margin: 2px;
 }
 
-.delete-box{
-    border-radius: 2px;
-    // border: 1px solid white; 
-    // background-color:wheat;
-    .delete-button{
-        background-color:wheat;
-        // border: 1px solid white; 
-        width: 15px;
-        height: 16px;
-        margin-top: 2px;
-        
-        a{
-            text-decoration: none;
-            padding-left: 4px;
-            padding-top: 0px;
-        }
+.delete-box {
+  border-radius: 2px;
+  // border: 1px solid white;
+  // background-color:wheat;
+  .delete-button {
+    background-color: rgb(255, 255, 255);
+    // border: 1px solid white;
+    width: 15px;
+    height: 16px;
+    margin-top: 2px;
+
+    a {
+      color: rgb(255, 0, 0);
+      text-decoration: none;
+      padding-left: 4px;
+      padding-top: 0px;
     }
+  }
+}
+.b {
+  border: 1px solid black;
 }

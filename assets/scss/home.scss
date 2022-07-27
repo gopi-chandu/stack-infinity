@@ -1,17 +1,40 @@
 #home-page-container {
   display: flex;
+  flex-direction: row;
   margin: 0;
   padding: 0;
-  background-color: red;
+  background-color: rgb(240, 240, 240);
   #user-feed {
     padding: 10px;
     width: 70%;
-    background-color: gold;
+    background-color: rgb(255, 255, 255);
   }
   #user-friends {
     padding: 10px;
     width: 30%;
     border-left: 2px solid black;
+  }
+  #left-align {
+    padding: 10px;
+    text-align: left;
+    p {
+      margin-bottom: 10px;
+    }
+    a:hover{
+      text-decoration: none;
+      div{
+        background-color: rgb(255, 255, 255);
+        
+      }
+    }
+    a {
+      border-radius: 6px;
+      background: #e0e0e0;
+      box-shadow: 2px 2px 4px #606060, -2px -2px 4px #ffffff;
+      padding: 3px;
+      
+    }
+
   }
 }
 .post-post {
@@ -19,30 +42,45 @@
   width: 99%;
   height: 100%;
 }
-.outer{
-    display: flex;
-    flex-direction: column;
-    background-color: red;
-    // width: 70%;
-    // margin-left: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+.outer {
+  display: flex;
+  flex-direction: column;
+  // background-color: red;
+  // width: 70%;
+  // margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+  border-radius: 50px;
+  border-radius: 50px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 50px #bebebe, -5px -5px 50px #ffffff;
 }
 
-.post-type{
-    background-color: aliceblue;
-    text-align: justify;
+.post-type {
+  background-color: aliceblue;
+  text-align: justify;
 }
 textarea {
-    border: none;
-    background-color: transparent;
-    resize: none;
-    outline: none;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }
-textarea:focus, input:focus{
-    outline: 0;
+textarea:focus,
+input:focus {
+  outline: 0;
 }
 
 *:focus {
-    outline: 0;
+  outline: 0;
+}
+
+.button > input {
+  height: 30px;
+  width: 50px;
+  border-radius: 5px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 7px #b3b3b3, -5px -5px 7px #ffffff;
 }

@@ -1,19 +1,33 @@
-$font-footer-size :12px;
+$font-footer-size :16px;
+$bg-color: rgb(191, 191, 191);
 footer-container {
-    background-color: burlywood;
+  padding-top: 20px;
+  padding-bottom: 20px;
+    background-color: rgb(191, 191, 191);
     display: flex;    
-
+    padding-left: 2px;
     ul {
       margin: 0;
       padding-left: 20px;
-      background-color: burlywood;
+      background-color:$bg-color;
       list-style: none;
       //display: flex;
       justify-content: space-between;
       li {
+        
         font-size: $font-footer-size;
         list-style: none;
         margin: 2px;
+        display: inline;
+        a {
+          border-radius: 6px;
+          background: #e0e0e0;
+          box-shadow: 2px 2px 4px #606060, -2px -2px 4px #ffffff;
+          padding: 3px;
+          margin-right: 60px;
+
+        }
+          
       }
     }
 
@@ -21,4 +35,9 @@ footer-container {
   .bottom{
     font-size: $font-footer-size;
     margin: 10px;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
   }

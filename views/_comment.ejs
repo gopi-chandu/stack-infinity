@@ -5,6 +5,11 @@
           <div class="comment-top">
 
             <div class="user-name">
+              <%if(comment.user.avatar){%>
+                <img class='img' id="blah" src="<%= comment.user.avatar%>" alt="your image" width="30"/>
+              <%}else{%>
+                <img class='img' id="blah" src="/images/doge.png" alt="your image" width="30"/>
+              <%}%>
               <%= comment.user.name%>
             </div>
             

@@ -1,0 +1,98 @@
+#chat-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  height: 300px;
+  width: 250px;
+  background: #ff306e;
+  border-radius: 15px;
+  border: 1px solid #cf0000;
+  padding: 5px; }
+  #chat-box #heading {
+    height: 9%; }
+  #chat-box #chat-messages {
+    border-top-left-radius: 20px;
+    list-style: none;
+    padding: 10px;
+    height: 70%;
+    background-color: white;
+    overflow: auto;
+    word-wrap: break-word; }
+    #chat-box #chat-messages .friend {
+      text-align: left;
+      padding: 5px; }
+      #chat-box #chat-messages .friend p {
+        word-break: break-all;
+        display: inline-block;
+        padding: 7px;
+        background-color: #a0b3ff; }
+      #chat-box #chat-messages .friend sub {
+        display: block;
+        font-size: 10px; }
+    #chat-box #chat-messages .our {
+      text-align: right;
+      padding: 5px; }
+      #chat-box #chat-messages .our p {
+        word-break: break-all;
+        display: inline-block;
+        padding: 7px;
+        background-color: #a0dcff; }
+      #chat-box #chat-messages .our sub {
+        display: block;
+        font-size: 10px; }
+  #chat-box #message-input {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: row; }
+    #chat-box #message-input #chat-message-input {
+      width: 70%;
+      text-decoration: none;
+      border-bottom-left-radius: 12px; }
+    #chat-box #message-input #send-message {
+      margin: 2px;
+      width: 25%;
+      font-size: 16px;
+      color: white;
+      border: none;
+      background: #171717;
+      border-bottom-right-radius: 12px; }
+
+input:focus {
+  outline: 0; }
+
+input {
+  outline: 0; }
+
+*:focus {
+  outline: 0; }
+
+input {
+  border: none;
+  background-color: #ffffda;
+  resize: none;
+  outline: none; }
+
+.friend {
+  text-align: left;
+  padding: 5px; }
+  .friend p {
+    word-break: break-all;
+    display: inline-block;
+    padding: 7px;
+    background-color: #a0b3ff; }
+  .friend sub {
+    display: block;
+    font-size: 10px; }
+
+.our {
+  text-align: right;
+  padding: 5px; }
+  .our p {
+    word-break: break-all;
+    display: inline-block;
+    padding: 7px;
+    background-color: #a0dcff; }
+  .our sub {
+    display: block;
+    font-size: 10px; }

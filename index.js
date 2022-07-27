@@ -14,6 +14,17 @@ const passportLocal = require("./config/passport-local-strategy");
 // for storing cookie session persistently in database
 const MongoStore = require("connect-mongo");
 
+// **********************
+//for chats , socket io
+const chatServer = require("http").Server(app); //passing express app
+// pass chat sockets to chat server
+const chatSocket = require("./config/chat-sockets").chatSockets(chatServer);
+chatServer.listen(3000);
+console.log("chat server is listening on port 3000 ... ");
+// **********************
+
+
+
 //for scss
 const sassMiddleware = require("node-sass-middleware");
 

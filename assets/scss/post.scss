@@ -1,150 +1,161 @@
-li{
-    list-style: none;
-
+li {
+  list-style: none;
 }
-ul{
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.post-container {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  padding: 7px;
+  text-align: justify;
+  border-radius: 12px;
+
+  .user-box {
+    border-radius: 7px;
+    // border: 1px solid white;
+    width: 200px;
+    padding: 3px;
+    // background-color:wheat;
+    .user-highlight {
+      width: fit-content;
+      // background-color: rgb(0, 247, 210);
+      border-radius: 2px;
+      padding: 2px;
+      margin: 2px;
+    }
+  }
+  .comment-heading {
+    border-radius: 7px;
+    // border: 1px solid white;
+    width: 200px;
+    padding: 3px;
+    margin-left: 3px;
+    font-size: 14px;
+    // background-color:wheat;
+  }
+  .post-content {
+    // background-color: silver;
+    width: 100%;
+  }
+  .top-post-box {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+    }
+    .delete-box {
+      // height: 20px;
+      // width: 15px;
+      border-radius: 2px;
+      // border: 1px solid white;
+      // background-color:wheat;
+      .delete-button {
+        // background-color: wheat;
+        background-color: rgb(255, 255, 255);
+        // border: 1px solid white;
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        padding-bottom: 4px;
+        a {
+          text-decoration: none;
+          padding-left: 4px;
+          padding-top: 0px;
+        }
+      }
+    }
+  }
+  .post-content-body {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    //border-bottom: 2px solid black;
+  }
+  .post-comments {
+    // border: 2px solid black;
+    padding-top: 3px;
+    .comment-form {
+      padding: 7px;
+      // background-color: red;
+    }
+    .list {
+      //border: 2px solid black;
+      margin: 0;
+      padding: 1px;
+    }
+  }
+  input {
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    width: 160px;
+    // color: #CCC;
     margin: 0;
-    padding: 0;
+  }
+  input:focus {
+    outline: none;
+  }
+  .comment-form {
+    // background-color: aqua;
+    height: 50px;
+    .comment-text {
+      height: 50px;
+      width: 100%;
+      background-color: rgba(239, 239, 239, 0.911);
+      border-radius: 3px;
+      .comment-text-content {
+        border-style: none;
+        width: 100%;
+        height: 100%;
+      }
+      textarea {
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+      }
+
+      textarea:focus,
+      input:focus {
+        outline: 0;
+      }
+
+      *:focus {
+        outline: 0;
+      }
+    }
+    .comment-button-container {
+      margin-top: 2px;
+      display: flex;
+      flex-direction: row-reverse;
+      height: 20px;
+      // background-color: red;
+      .comment-button {
+        border: 1px solid black;
+        width: 50px;
+        background-color: grey;
+      }
+    }
+    margin-bottom: 20px;
+  }
 }
 
-.post-container{
-    background-color: rgb(231, 231, 231);
-    margin: 10px;
-    padding: 7px;
-    text-align: justify;
-    border-radius: 5px;
+.img {
+  padding: 0%;
+  margin: 0%;
+  position: relative;
+  top: 5px;
+}
 
-    .user-box{
-        border-radius: 7px;
-        // border: 1px solid white;
-        width:200px;
-        padding: 3px;
-        // background-color:wheat;
-        .user-highlight{
-            width: fit-content;
-            background-color: rgb(168, 168, 168);
-            border-radius: 2px;
-            padding: 2px;
-            margin: 2px;
-        }
-    }
-    .comment-heading{
-        border-radius: 7px;
-        // border: 1px solid white;
-        width:200px;
-        padding: 3px;
-        margin-left: 3px;
-        font-size: 14px;
-        // background-color:wheat;
-        
-    }
-    .post-content{
-        // background-color: silver;
-        width: 100%;
-    }
-    .top-post-box{
-        border-bottom: 2px solid black;
-        display: flex;
-        justify-content: space-between;
-        a{
-            text-decoration: none;
-        }
-        .delete-box{
-            // height: 20px;
-            // width: 15px;
-            border-radius: 2px;
-            // border: 1px solid white; 
-            // background-color:wheat;
-            .delete-button{
-                background-color:wheat;
-                // border: 1px solid white; 
-                width: 18px;
-                height: 18px;
-                margin-top: 2px;
-                padding-bottom: 4px;
-                a{
-                    text-decoration: none;
-                    padding-left: 4px;
-                    padding-top: 0px;
-                    
-                }
-            }
-        }
-    }
-    .post-content-body{
-        padding-bottom: 10px;
-        //border-bottom: 2px solid black;
-    }
-    .post-comments{
-        // border: 2px solid black;
-        padding-top: 3px;
-        .comment-form{
-            padding: 7px;
-            // background-color: red;
-        }
-        .list{
-            //border: 2px solid black;
-            margin: 0;
-            padding: 1px;
-
-        }
-
-    }
-    input {
-        background-color: transparent;
-        border: 0px solid;
-        height: 20px;
-        width: 160px;
-        // color: #CCC;
-        margin: 0;
-    }
-    input:focus{
-        outline: none;
-    }
-    .comment-form{
-        // background-color: aqua;
-        height: 50px;
-        .comment-text{
-            height: 50px;
-            width: 100%;
-            background-color: rgb(171, 168, 168);
-            border-radius: 3px;
-            .comment-text-content{
-                border-style: none;
-                width: 100%;
-                height: 100%;
-                
-            }
-            textarea {
-                border: none;
-                background-color: transparent;
-                resize: none;
-                outline: none;
-            }
-              
-              textarea:focus, input:focus{
-                  outline: 0;
-              }
-              
-              *:focus {
-                  outline: 0;
-              }
-        }
-        .comment-button-container{
-            margin-top: 2px;
-            display: flex;
-            flex-direction: row-reverse;
-            height: 20px;
-            // background-color: red;
-            .comment-button{
-                border: 1px solid black;
-                width: 50px;
-                background-color: grey;
-            }
-            
-        }
-        margin-bottom: 20px;
-    }
-    
-
+.toggle-like-button{
+  background-color:white;
+  text-decoration: none;
+  color:black;
+  font-size:18px;
 }

@@ -1,8 +1,11 @@
 <footer>
     <footer-container>
         <ul>
-            <li>Home</li>
-            <li>Profile</li>
+            <li><a href="/">Home</a></li>
+            <%if(locals.user){%>
+            <li><a href="/users/profile/<%=locals.user._id%>">Profile</a></li>
+            <%}%>
+            <li><a href="/hailBalayya">Error 404</a></li>
         </ul>
 
     </footer-container>

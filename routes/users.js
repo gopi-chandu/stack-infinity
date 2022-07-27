@@ -26,7 +26,7 @@ router.get("/send-otp", usersController.sendOTP);
 // using passport as middleware
 router.post(
   "/create-session",
-  passport.authenticate("local", { failureRedirect: "/users/send-otp" }),
+  passport.authenticate("local", { failureRedirect: "/users/sign-in" }),
   usersController.createSession
 );
 

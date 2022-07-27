@@ -46,6 +46,7 @@
           <div>
             <div class="user-box">
               <div class="user-highlight">
+              <img class='img' id="blah" src="/images/doge.png" alt="your image" width="30"/>
                 ${post.user.name}
               </div>
               <br>
