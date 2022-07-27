@@ -6,9 +6,10 @@ ul {
   padding: 0; }
 
 .post-container {
+  border-bottom: 4px solid #ff5188;
   border-radius: 50px;
   background: #e0e0e0;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  box-shadow: 7px 7px 31px #d0d0d0, -7px -7px 31px #f0f0f0;
   background-color: white;
   margin: 10px;
   padding: 7px;
@@ -71,6 +72,7 @@ ul {
     height: 50px;
     margin-bottom: 20px; }
     .post-container .comment-form .comment-text {
+      border-bottom: 2px solid #51e2ff;
       height: 50px;
       width: 100%;
       background-color: rgba(239, 239, 239, 0.911);

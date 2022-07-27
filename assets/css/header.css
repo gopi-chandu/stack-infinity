@@ -4,7 +4,9 @@ header {
   display: flex;
   justify-content: space-between;
   background: #e0e0e0;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; }
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  border-color: red;
+  border-bottom: 4px solid #ff5188; }
   header left {
     margin-top: 5px;
     margin-left: 10px;

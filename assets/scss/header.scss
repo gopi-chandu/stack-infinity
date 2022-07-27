@@ -6,12 +6,15 @@ header {
   display: flex;
   justify-content: space-between;
   // border-radius: 20px;
+  
 background: #e0e0e0;
 box-shadow:  20px 20px 60px #bebebe,
              -20px -20px 60px #ffffff;
   
   // position: fixed;
   // width: 100%;
+  border-color: red;
+  border-bottom: 4px solid rgb(255, 81, 136);
   left{
     margin-top: 5px;
     margin-left: 10px;
