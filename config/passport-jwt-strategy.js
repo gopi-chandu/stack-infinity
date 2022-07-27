@@ -1,5 +1,5 @@
 const passport = require("passport");
-
+const env=require('./environment')
 const JWTStrategy = require("passport-jwt").Strategy;
 //to extract token from header , header-payload-s
 const ExtractJwt = require("passport-jwt").ExtractJwt;
@@ -9,7 +9,7 @@ const User = require("../models/user");
 var options = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   // decryption takes place using the key below
-  secretOrKey: "gopi",
+  secretOrKey: env.jwtKey,
 };
 
 passport.use(

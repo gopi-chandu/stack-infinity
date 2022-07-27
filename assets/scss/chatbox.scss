@@ -16,6 +16,7 @@
   border-radius:15px;
   // border: 2px solid rgb(105, 105, 105);
   padding: 5px;
+  
   // box-shadow: 1px 1px 1px 1px rgb(193, 193, 193);
   #heading {
     height: 9%;
@@ -25,8 +26,8 @@
     border-top-left-radius: 20px;
    
     list-style: none;
-    padding: 10px;
-    height: 70%;
+    // padding: 10px;
+    height: 60%;
     background-color: white;
     overflow: auto;
     // overflow:scroll; 
@@ -69,8 +70,13 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    // background-color: aqua;
+    // position: relative;
+    // bottom: 10px;
     #chat-message-input {
+      
       border-top: 2px solid black;
       // height: 40%;
       width: 70%;
@@ -79,10 +85,10 @@
       background-color: rgb(247, 247, 247);
       font-family: monospace;
       font-size: 16px;
+      // background-color: red;
     }
 
     #send-message {
-      
       margin: 2px;
       // height: 40%;
       width: 25%;

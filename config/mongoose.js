@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
-
-mongoose.connect('mongodb://localhost/stack_infinity');
+const env=require('./environment')
+mongoose.connect(env.db);
 
 const db=mongoose.connection
 

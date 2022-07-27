@@ -23,24 +23,28 @@ chatServer.listen(3000);
 console.log("chat server is listening on port 3000 ... ");
 // **********************
 
-
+const env = require("./config/environment");
 
 //for scss
 const sassMiddleware = require("node-sass-middleware");
+const path = require("path");
 
-app.use(
-  sassMiddleware({
-    src: "./assets/scss",
-    dest: "./assets/css",
-    debug: true,
-    outputStyle: "extended",
-    prefix: "/css", // in templates we have used the "/css" as the prefix so we use it here
-  })
-);
+if (env.name == "development") {
+  app.use(
+    sassMiddleware({
+      // current path , ./assets/
+      src: path.join(__dirname, env.asset_path, "scss"),
+      dest: path.join(__dirname, env.asset_path, "css"),
+      debug: true,
+      outputStyle: "extended",
+      prefix: "/css", // in templates we have used the "/css" as the prefix so we use it here
+    })
+  );
+}
 
 app.use(express.urlencoded());
 app.use(cookieParser());
-app.use(express.static("./assets"));
+app.use(express.static(env.asset_path));
 // to access avatars from browser
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
@@ -58,7 +62,7 @@ app.use(
   session({
     name: "stack_infinity",
     //change the secret key value before deployment
-    secret: "gopi",
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {
