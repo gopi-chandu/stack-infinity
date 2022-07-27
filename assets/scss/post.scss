@@ -137,9 +137,10 @@ ul {
       height: 20px;
       // background-color: red;
       .comment-button {
-        border: 1px solid black;
+        border: 2px solid rgb(42, 42, 42);
         width: 50px;
-        background-color: grey;
+        background-color: rgb(255, 255, 255);
+        border-radius: 6px;
       }
     }
     margin-bottom: 20px;

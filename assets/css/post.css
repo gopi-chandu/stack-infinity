@@ -95,9 +95,10 @@ ul {
       flex-direction: row-reverse;
       height: 20px; }
       .post-container .comment-form .comment-button-container .comment-button {
-        border: 1px solid black;
+        border: 2px solid #2a2a2a;
         width: 50px;
-        background-color: grey; }
+        background-color: white;
+        border-radius: 6px; }
 
 .img {
   padding: 0%;

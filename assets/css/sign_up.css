@@ -32,6 +32,11 @@
     background-color: rgb(180, 180, 180);
     outline: none;
     border: 0px solid;
+    padding: 5px;
+    background-color: rgb(200, 200, 200) ;
+    border-radius: 7%;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
 }
 .item2>input{
@@ -39,6 +44,13 @@
     background-color: rgb(172, 172, 172);
     outline: none;
     border: 0px solid;
+
+    padding: 5px;
+    background-color: rgb(166, 166, 166) ;
+    border-radius: 7%;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .size{

@@ -4,14 +4,22 @@
   right: 10px;
   // border: 1px grey;
   height: 300px;
-  width: 250px;
-  background: rgb(255, 48, 110);
+  width: 270px;
+  // background: rgb(255, 48, 110);
+
+
+  border-radius: 50px;
+background: linear-gradient(145deg, #cacaca, #f0f0f0);
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+
   border-radius:15px;
-  border: 1px solid rgb(207, 0, 0);
+  // border: 2px solid rgb(105, 105, 105);
   padding: 5px;
   // box-shadow: 1px 1px 1px 1px rgb(193, 193, 193);
   #heading {
     height: 9%;
+    font-weight: 600;
   }
   #chat-messages {
     border-top-left-radius: 20px;
@@ -30,23 +38,25 @@
         word-break: break-all;
         display: inline-block;
         padding: 7px;
-        background-color: #a0b3ff;
+        background-color: #fca0ff;
+        border-radius: 7px;
       }
       sub {
         display: block;
         font-size: 10px;
       }
     }
-
+    
     .our {
       text-align: right;
       padding: 5px;
-
+      
       p {
         word-break: break-all;
         display: inline-block;
         padding: 7px;
-        background-color: #a0dcff;
+        background-color: #74ceff;
+        border-radius: 7px;
       }
       sub {
         display: block;
@@ -59,24 +69,30 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-
+    
     #chat-message-input {
+      border-top: 2px solid black;
       // height: 40%;
       width: 70%;
       text-decoration: none;
       border-bottom-left-radius: 12px;
+      background-color: rgb(247, 247, 247);
+      font-family: monospace;
+      font-size: 16px;
     }
 
     #send-message {
+      
       margin: 2px;
       // height: 40%;
       width: 25%;
       font-size: 16px;
       color: white;
       border: none;
-      background: #171717;
+      background: #2e2e2e;
       // border-radius: 12px;
       border-bottom-right-radius: 12px;
+
     }
   }
 }
@@ -120,7 +136,7 @@ input {
     word-break: break-all;
     display: inline-block;
     padding: 7px;
-    background-color: #a0dcff;
+    background-color: #7affff;
   }
   sub {
     display: block;
