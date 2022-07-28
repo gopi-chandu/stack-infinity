@@ -6,7 +6,7 @@ const homeController = require("../controllers/home_controller");
 const errorController = require("../controllers/error_controller");
 console.log("Router loaded ... ");
 
-// router.get("/", passport.checkAuthentication, homeController.home);
+router.get("/", passport.checkAuthentication, homeController.home);
 router.use("/users", require("./users"));
 router.use("/posts", require("./posts"));
 router.use("/comments", require("./comments"));
