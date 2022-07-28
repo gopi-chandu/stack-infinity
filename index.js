@@ -19,7 +19,7 @@ const MongoStore = require("connect-mongo");
 const chatServer = require("http").Server(app); //passing express app
 // pass chat sockets to chat server
 const chatSocket = require("./config/chat-sockets").chatSockets(chatServer);
-chatServer.listen(3000);
+chatServer.listen(process.env.port2 || 3000);
 console.log("chat server is listening on port 3000 ... ");
 // **********************
 
