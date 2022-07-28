@@ -25,7 +25,7 @@ const production = {
     service: "gmail",
     host: "smtp.gmail.com",
     secure: false,
-    port: process.env.port,
+    port: 587,
     auth: {
       user: process.env.user,
       // password : ujyvkqzbazbjjwro
@@ -35,4 +35,4 @@ const production = {
   jwtKey: process.env.jwtKey,
 };
 
-module.exports =production;
+module.exports =development;
