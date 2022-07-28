@@ -42,6 +42,8 @@ if (env.name == "development") {
   );
 }
 
+
+
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static(env.asset_path));
@@ -70,7 +72,7 @@ app.use(
     },
     store: MongoStore.create(
       {
-        mongoUrl: "mongodb://localhost/stack_infinity",
+        mongoUrl: env.db,
         mongoConnection: db,
         autoRemove: "disabled",
       },

@@ -4,7 +4,7 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const User = require("../models/user");
 
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 passport.use(
@@ -26,16 +26,24 @@ passport.use(
         //   // result == true
         //   return false;
         // });
-        
-        const match = await bcrypt.compare(password, user.password);
-        console.log("--------------- ",match)
-        if (!user || !match) {
+
+        if (!user) {
           req.flash("error", "Invalid Username/Password");
           return done(null, false, {
             message: "Incorrect username or password.",
           });
         }
-        if(!(user.verified)){
+        const match = await bcrypt.compare(password, user.password);
+        console.log("--------------- ", match);
+
+        if (!match) {
+          req.flash("error", "Invalid Username/Password");
+          return done(null, false, {
+            message: "Incorrect username or password.",
+          });
+        }
+
+        if (!user.verified) {
           req.flash("error", "verify email");
           return done(null, false, {
             message: "verify email ",

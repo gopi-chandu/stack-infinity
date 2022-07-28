@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 10px;
   right: 10px;
-  height: 300px;
+  height: 350px;
   width: 270px;
   border: 2px black;
   border-style: dashed;
@@ -17,7 +17,7 @@
   #chat-box #chat-messages {
     border-top-left-radius: 20px;
     list-style: none;
-    height: 60%;
+    height: 65%;
     background-color: white;
     overflow: auto;
     word-wrap: break-word; }
