@@ -1,14 +1,13 @@
 const Comment = require("../models/comment");
 const Post = require("../models/post");
 const Like = require("../models/like");
-
+const nodemailer = require("../config/nodemailer");
+const commentsMailer = require("../mailers/comments_mailer");
+const postCommentsMailer = require("../mailers/post_comment_mailer");
 // const commentsMailer = require("../mailers/comments_mailer");
 
 // for using the queue -> workers
-const queue = require("../config/kue");
 // for using emails queue created ,so we include the below link
-const commentEmailWorker = require("../workers/comment_email_workers");
-
 
 module.exports.create = async function (req, res) {
   try {
@@ -26,20 +25,21 @@ module.exports.create = async function (req, res) {
     // here push method puts the id of the comment
     await post.comments.push(comment); //pushing comment_id
     await post.save();
-    let job1 = queue.create("post-comment-emails", post).save(function (err) {
-      if (err) {
-        console.log("error in creating a queue", err);
-        return;
-      }
+    // let job1 = queue.create("post-comment-emails", post).save(function (err) {
+    //   if (err) {
+    //     console.log("error in creating a queue", err);
+    //     return;
+    //   }
 
-      console.log("job id -> -> ", job1.id);
-    });
+    //   console.log("job id -> -> ", job1.id);
+    // },);
     let comments = await Comment.findById(comment._id).populate(
       "user",
       "name email"
     );
-
-    //commentsMailer.newComment(comments);
+    console.log('hai')
+    postCommentsMailer.newPostComment(post);
+    // commentsMailer.newComment(comments);
     // let job = queue.create("emails", comments).save(function (err) {
     //   if (err) {
     //     console.log("error in creating a queue", err);

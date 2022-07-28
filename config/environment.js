@@ -29,7 +29,7 @@ const production = {
     auth: {
       user: process.env.user,
       // password : ujyvkqzbazbjjwro
-      pass: process.env.password,
+      pass: process.env.pass,
     },
   },
   jwtKey: process.env.jwtKey,

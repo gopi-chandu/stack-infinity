@@ -1,7 +1,9 @@
 const nodemailer = require("../config/nodemailer");
+const env = require("../config/environment");
 
 exports.newPostComment = (post) => {
   console.log(post)
+  console.log(env.smtp)
   let htmlString = nodemailer.renderTemplate(
     { comment: post },
     "/comments/newPostComment.ejs"

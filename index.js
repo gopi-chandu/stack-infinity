@@ -44,7 +44,7 @@ if (env.name == "development") {
 
 
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(env.asset_path));
 // to access avatars from browser
