@@ -1,21 +1,21 @@
-const development = {
-  name: "development",
-  asset_path: "./assets",
-  session_cookie_key: "gopi",
-  db: "mongodb+srv://gopichandu:DoneForMe@cluster0.yqqybxx.mongodb.net/stack_infinity",
-  smtp: {
-    service: "gmail",
-    host: "smtp.gmail.com",
-    secure: false,
-    port: 587,
-    auth: {
-      user: "development.illuminati@gmail.com",
-      // password : ujyvkqzbazbjjwro
-      pass: "ujyvkqzbazbjjwro",
-    },
-  },
-  jwtKey: "gopi",
-};
+// const development = {
+//   name: "development",
+//   asset_path: "./assets",
+//   session_cookie_key: "gopi",
+//   db: "mongodb+srv://gopichandu:DoneForMe@cluster0.yqqybxx.mongodb.net/stack_infinity",
+//   smtp: {
+//     service: "gmail",
+//     host: "smtp.gmail.com",
+//     secure: false,
+//     port: 587,
+//     auth: {
+//       user: "development.illuminati@gmail.com",
+//       // password : ujyvkqzbazbjjwro
+//       pass: "ujyvkqzbazbjjwro",
+//     },
+//   },
+//   jwtKey: "gopi",
+// };
 const production = {
   name: "production",
   asset_path: process.env.asset_path,
@@ -35,4 +35,4 @@ const production = {
   jwtKey: process.env.jwtKey,
 };
 
-module.exports =development;
+module.exports =production;
