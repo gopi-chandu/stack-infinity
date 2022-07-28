@@ -52,7 +52,8 @@ ul {
           padding-top: 0px; }
   .post-container .post-content-body {
     margin-top: 10px;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    border-bottom: 2px solid black; }
   .post-container .post-comments {
     padding-top: 3px; }
     .post-container .post-comments .comment-form {
