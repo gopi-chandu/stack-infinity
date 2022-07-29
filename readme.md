@@ -6,10 +6,11 @@
 >
 > This app is purely made for fun , users can post posts and comment on them
 
-Mobile View
+# Mobile View
 >
 ![image](https://github.com/gopi-chandu/stack-infinity/blob/master/pics/demo.jpg)
 
+try out the website -> [https://stack-infinity-demo.onrender.com/](https://stack-infinity-demo.onrender.com/)
 ## Usage
 
 > - sign up , get otp and verify it.
