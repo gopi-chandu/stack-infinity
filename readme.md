@@ -3,7 +3,7 @@
 > This app is purely made for fun , users can post posts and comment on them
 
 Mobile View
-![image](https://github.com/gopi-chandu/stack-infinity/mobile.gif)
+![image](https://github.com/gopi-chandu/stack-infinity//blob/master/pics/demo.jpg)
 
 ## Usage
 > - sign up , get otp and verify it.
